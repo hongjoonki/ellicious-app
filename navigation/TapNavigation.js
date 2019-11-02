@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import Home from "../screens/Tabs/Home";
-import Search from "../screens/Tabs/Search";
+import Search from "../screens/Tabs/Search/SearchContainer";
 import Notifications from "../screens/Tabs/Notifications";
 import Profile from "../screens/Tabs/Profile";
 import { createStackNavigator } from "react-navigation-stack";
@@ -17,17 +17,16 @@ const stackFactory = (initialRoute, customConfig) =>
     });
 
 export default createBottomTabNavigator({
+    Search: {
+        screen: stackFactory(Search)
+    },
     Home: {
         screen: stackFactory(Home, {
             title: "Home",
             headerRight: <MessagesLink />
         })
     },
-    Search: {
-        screen: stackFactory(Search, {
-            title: "Search"
-        })
-    },
+    
     Add: {
         screen: View,
         navigationOptions: {

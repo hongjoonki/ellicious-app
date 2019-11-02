@@ -1,5 +1,5 @@
 const apolloClientOptions = {
-    uri:"http://localhost:4000/graphql"
+    uri:"http://192.168.0.181:4000"
 }
 
 export default apolloClientOptions;
